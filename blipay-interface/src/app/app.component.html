@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Sistema de Empréstimos</a>
+
+    <div class="d-flex">
+      <a class="nav-link text-white  me-3" routerLink="/form">Pedir Empréstimo</a>
+      <a class="nav-link text-white" routerLink="/list">Empréstimos Solicitados</a>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet />
+</div>
+
+<app-modal *ngIf="modal.visible" [title]="modal.title" [type]="modal.type" [message]="modal.message"
+  (close)="closeModal()" />

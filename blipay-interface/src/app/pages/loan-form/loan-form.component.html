@@ -1,0 +1,53 @@
+<div class="mt-5 d-flex justify-content-center">
+  <div class="col-md-6 col-sm-12">
+    <h3 class="text-center mb-4">Pedir Empréstimo</h3>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="name" formControlName="name"
+          [ngClass]="{'is-invalid': isInvalid('name')}" />
+        <div class="invalid-feedback">Nome é obrigatório.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="age" class="form-label">Idade</label>
+        <input type="number" class="form-control" id="age" formControlName="age"
+          [ngClass]="{'is-invalid': isInvalid('age')}" />
+        <div class="invalid-feedback" *ngIf="hasError('age', 'required')">Idade é obrigatório.</div>
+        <div class="invalid-feedback" *ngIf="hasError('age', 'min')">Idade minima é 18 anos.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="monthlyIncome" class="form-label">Renda mensal</label>
+        <input class="form-control" [currencyMask]="currencyMaskConfig" formControlName="monthlyIncome"
+          [ngClass]="{ 'is-invalid': isInvalid('monthlyIncome') }" />
+        <div class="invalid-feedback" *ngIf="hasError('monthlyIncome', 'required')">Renda mensal é obrigatório.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="city" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="city" formControlName="city"
+          [ngClass]="{'is-invalid': isInvalid('city')}" />
+        <div class="invalid-feedback">Cidade é obrigatório.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" class="form-control" id="cpf" formControlName="cpf" mask="000.000.000-00"
+          placeholder="000.000.000-00" [ngClass]="{'is-invalid': isInvalid('cpf')}" />
+        <div class="invalid-feedback" *ngIf="hasError('cpf', 'required')">CPF é obrigatório.</div>
+        <div class="invalid-feedback" *ngIf="hasError('cpf', 'mask')">CPF incompleto ou inválido.</div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+          <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status"
+            aria-hidden="true"></span>
+          {{ isSubmitting ? 'Aguarde...' : 'Enviar' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

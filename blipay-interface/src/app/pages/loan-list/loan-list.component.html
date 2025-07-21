@@ -1,0 +1,47 @@
+<div class="mt-5 d-flex justify-content-center">
+  <div class="col-12">
+    <h3 class="text-center mb-4">Emprestimos Solicitados</h3>
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-6 d-flex">
+        <input mask="000.000.000-00" placeholder="000.000.000-00" [(ngModel)]="cpf" class="form-control me-2" />
+        <button (click)="search()" class="btn btn-primary" [disabled]="isLoading || !cpf">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          {{ isLoading ? 'Aguarde...' : 'Enviar' }}
+        </button>
+      </div>
+    </div>
+    <ng-container *ngIf="loans.length !== 0">
+      <table class="table table-bordered mt-3">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Renda mensal</th>
+            <th>Cidade</th>
+            <th>CPF</th>
+            <th>Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let loan of loans">
+            <td>{{ loan.name }}</td>
+            <td>{{ loan.age }}</td>
+            <td>{{ loan.monthlyIncome | currency:'BRL' }}</td>
+            <td>{{ loan.city }}</td>
+            <td>{{ loan.cpf }}</td>
+            <td>{{ loan.score }}</td>
+            <td>
+              <span class="badge" [ngClass]="{
+            'bg-success': loan?.approved,
+            'bg-danger': !loan?.approved
+          }">
+                {{loan?.approved ? 'Aprovado' : 'Reprovado' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+dotenv
+Flask
+flask-cors
+Flask-Migrate
+flask-restx
+Flask-SQLAlchemy
+Flask-WTF
+pydantic
+pytest
+pytest-flask
+python-dotenv
+requests
+SQLAlchemy
+gunicorn
