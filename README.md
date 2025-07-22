@@ -40,8 +40,8 @@ Frontend Angular           Proxy reverso para /api
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone git@github.com:tiagofranco21/blipay-desafio.git
+cd blipay-desafio
 ```
 
 ### 2. Configure a chave da API
