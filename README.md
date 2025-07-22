@@ -52,6 +52,8 @@ Crie um arquivo `.env` na pasta blipay-backend baseado em `base.env`, é necessa
 OPENWEATHER_API_KEY=sua_chave_aqui
 ```
 
+> Para os testes no backend, também é necessário adicionar a chave da api openweather no arquivo `test.env`.
+
 ---
 
 ### 3. Suba os containers com Docker Compose
