@@ -7,4 +7,4 @@ services:
       dockerfile: Dockerfile.test
     container_name: frontend-tests
     command: npm run test-docker
-#docker compose -f docker-compose-frontend.test.yml up --abort-on-container-exit --exit-code-from frontend-tests
+#docker compose -f docker-compose-frontend.test.yml up --abort-on-container-exit --exit-code-from frontend-tests --remove-orphans

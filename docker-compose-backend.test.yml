@@ -8,4 +8,4 @@ services:
     volumes:
       - "./blipay-backend/:/home/project/blipay"
     container_name: backend-tests
-#docker compose -f docker-compose-backend.test.yml up --abort-on-container-exit --exit-code-from backend-tests
+#docker compose -f docker-compose-backend.test.yml up --abort-on-container-exit --exit-code-from backend-tests --remove-orphans

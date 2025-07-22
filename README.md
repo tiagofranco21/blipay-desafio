@@ -77,13 +77,13 @@ O projeto está preparado com testes automatizados para frontend e backend.
 ### Backend Flask
 
 ```bash
-docker compose -f docker-compose-backend.test.yml up --abort-on-container-exit --exit-code-from backend-tests
+docker compose -f docker-compose-backend.test.yml up --abort-on-container-exit --exit-code-from backend-tests --remove-orphans
 ```
 
 ### Frontend Angular
 
 ```bash
-docker compose -f docker-compose-frontend.test.yml up --abort-on-container-exit --exit-code-from frontend-tests
+docker compose -f docker-compose-frontend.test.yml up --abort-on-container-exit --exit-code-from frontend-tests --remove-orphans
 ```
 
 ---
