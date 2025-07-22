@@ -35,7 +35,7 @@ Frontend Angular           Proxy reverso para /api
 
 ---
 
-## 🚀 Como rodar o projeto
+## Como rodar o projeto
 
 ### 1. Clone o repositório
 
@@ -68,7 +68,7 @@ http://localhost:80
 
 ---
 
-## 🧪 Executar os testes
+## Executar os testes
 
 O projeto está preparado com testes automatizados para frontend e backend.
 
