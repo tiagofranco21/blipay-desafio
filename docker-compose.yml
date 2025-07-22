@@ -3,12 +3,11 @@ version: "3.8"
 services:
   api:
     build: ./blipay-backend/blipay
-    command: gunicorn --bind 0.0.0.0:5000 --workers 4 index:app --timeout 3600
-    # restart: unless-stopped
+    command: gunicorn --bind 0.0.0.0:5000 --workers 4 index:app --timeout 120
     volumes:
       - "./blipay-backend/:/home/project/blipay"
-    #ports:
-    #- 5000:5000
+    ports:
+      - 5000:5000
 
   nginx:
     build: ./blipay-interface
